@@ -3,7 +3,10 @@
 Hand this file to another writer. Do not invent a new site structure. Fill the
 placeholders already marked in `public/index.html` with `data-copy="..."`.
 
-Leave legal pages (`privacy.html`, `terms.html`) alone unless asked.
+Leave legal and billing pages alone unless asked: `privacy.html`,
+`terms.html`, `refunds.html`, `billing.html`, and `contact.html`. Those
+pages are written for Stripe review. Do not add `[DRAFT]` back to the
+homepage — Stripe treats unfinished sites as incomplete.
 
 ## Voice
 

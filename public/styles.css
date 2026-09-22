@@ -14,6 +14,8 @@
   --card: rgba(255, 255, 255, 0.72);
   --shadow: 0 18px 50px rgba(22, 21, 19, 0.06);
   --color-scheme: light;
+  --font-sans: Outfit, "Segoe UI", sans-serif;
+  --font-display: Montserrat, Outfit, sans-serif;
 }
 
 html[data-theme="dark"] {
@@ -46,7 +48,7 @@ body {
   min-height: 100vh;
   background: var(--bg);
   color: var(--ink);
-  font-family: Figtree, "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
   font-size: 17px;
   line-height: 1.65;
   overflow-x: hidden;
@@ -122,14 +124,22 @@ main {
 }
 
 .wordmark {
-  color: var(--ink);
-  font-family: "Instrument Serif", Georgia, serif;
-  font-size: 24px;
-  letter-spacing: -0.03em;
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
 }
 
 .wordmark:hover { text-decoration: none; }
+
+.logo {
+  display: block;
+  height: 40px;
+  width: auto;
+}
+
+html[data-theme="dark"] .logo {
+  filter: invert(1);
+}
 
 nav {
   display: flex;
@@ -249,7 +259,9 @@ sl-drawer:not(:defined) { display: none; }
   display: block;
   padding: 16px 12px;
   color: var(--ink);
-  font-family: "Instrument Serif", serif;
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.03em;
   font-size: 28px;
   line-height: 1.2;
   border-bottom: 1px solid var(--line);
@@ -401,7 +413,9 @@ sl-drawer:not(:defined) { display: none; }
 
 .slide-index,
 .project-visual span {
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.04em;
   font-size: 56px;
   line-height: 1;
   color: var(--accent);
@@ -423,16 +437,16 @@ sl-drawer:not(:defined) { display: none; }
 }
 
 h1, h2, h3 {
-  font-family: "Instrument Serif", Georgia, serif;
-  font-weight: 400;
+  font-family: var(--font-display);
+  font-weight: 500;
   letter-spacing: -0.03em;
   line-height: 1.12;
   color: var(--ink);
 }
 
-h1 { margin: 0 0 22px; max-width: 16ch; font-size: clamp(44px, 8vw, 80px); }
-h2 { margin: 0 0 16px; font-size: clamp(30px, 5vw, 44px); }
-h3 { margin: 0 0 10px; font-size: 24px; }
+h1 { margin: 0 0 22px; max-width: 16ch; font-size: clamp(38px, 6.4vw, 64px); }
+h2 { margin: 0 0 16px; font-size: clamp(28px, 4.4vw, 40px); }
+h3 { margin: 0 0 10px; font-size: 22px; font-weight: 500; }
 
 .lede, .section-copy {
   max-width: 46ch;
@@ -597,7 +611,8 @@ section[id] { scroll-margin-top: 88px; }
   display: block;
   margin-bottom: 12px;
   color: var(--accent);
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: var(--font-display);
+  font-weight: 500;
   font-size: 22px;
 }
 
@@ -637,6 +652,48 @@ section[id] { scroll-margin-top: 88px; }
 }
 
 .footer-links { display: flex; flex-wrap: wrap; gap: 16px; }
+
+.contact-methods {
+  display: grid;
+  gap: 16px;
+  margin: 28px 0;
+}
+
+.contact-methods article {
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--card);
+}
+
+.contact-methods h2 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+}
+
+.card-brands {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card-brands li {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.policy-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-top: 8px;
+}
 
 @media (max-width: 860px) {
   .hero-inner,
