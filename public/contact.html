@@ -3,138 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Customer support — Axial Motion</title>
-    <meta name="description" content="Email Axial Motion for product support, billing, refunds, and studio questions. We reply within two business days." />
+    <title>Contact — Axial Motion</title>
+    <meta http-equiv="refresh" content="0; url=/support" />
+    <link rel="canonical" href="https://axialmotion.com/support" />
+    <meta name="description" content="Axial Motion support has moved to axialmotion.com/support." />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css?v=20260922j" />
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/components/drawer/drawer.js"></script>
-    <script>
-      (() => {
-        try {
-          const stored = localStorage.getItem("theme");
-          const theme =
-            stored === "light" || stored === "dark"
-              ? stored
-              : window.matchMedia("(prefers-color-scheme: dark)").matches
-                ? "dark"
-                : "light";
-          document.documentElement.setAttribute("data-theme", theme);
-        } catch (e) {}
-      })();
-    </script>
   </head>
   <body>
-    <div class="page-bg" aria-hidden="true"></div>
-    <header class="site-header">
-      <div class="header-inner">
-        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-open>
-          <span class="hamburger" aria-hidden="true"><span></span></span>
-        </button>
-        <a class="wordmark" href="/" aria-label="Axial Motion home">
-          <img class="logo" src="/axial_motion.png" alt="Axial Motion" width="112" height="40" />
-        </a>
-        <nav class="site-nav">
-          <a href="/about">About</a>
-          <a href="/billing">Billing</a>
-          <a href="/#approach">Approach</a>
-          <a class="is-current" href="/contact">Contact</a>
-          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme">Dark</button>
-        </nav>
-      </div>
-    </header>
-    <sl-drawer class="nav-drawer" label="Menu" placement="start" no-header data-nav-drawer>
-      <nav class="drawer-nav">
-        <a href="/about">About</a>
-        <a href="/#products">Products</a>
-        <a href="/billing">Billing</a>
-        <a href="/#approach">Approach</a>
-        <a class="is-current" href="/contact">Contact</a>
-        <a href="/refunds">Refunds</a>
-        <a href="https://andybotero.com">Andy Botero</a>
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme">Dark</button>
-      </nav>
-    </sl-drawer>
     <main class="prose">
-      <p class="eyebrow">Support</p>
-      <h1>Customer support</h1>
+      <h1>Support</h1>
       <p>
-        This is the public contact page for Axial Motion, the company that
-        operates Olyve and receives charges for Olyve usage. For Olyve
-        billing or refunds, use
-        <a href="https://getolyve.com/support">getolyve.com/support</a>.
-        There is no contact form; email us directly.
-      </p>
-
-      <div class="contact-methods">
-        <article>
-          <h2>Email</h2>
-          <p>
-            <a href="mailto:andres@axialmotion.com">andres@axialmotion.com</a>
-          </p>
-          <p>
-            For a refund or a charge you do not recognize, use the subject
-            “Refund request” or “Billing” and include the product name and
-            date of the charge.
-          </p>
-        </article>
-        <article>
-          <h2>Phone</h2>
-          <p>
-            <a href="tel:+19546396845">+1 (954) 639-6845</a>
-          </p>
-        </article>
-        <article>
-          <h2>Hours</h2>
-          <p>
-            Monday–Friday, 9:00 a.m. to 5:00 p.m. Eastern Time, excluding
-            United States federal holidays. We aim to reply within two
-            business days.
-          </p>
-        </article>
-        <article>
-          <h2>Company</h2>
-          <p>
-            Axial Motion<br />
-            Software studio<br />
-            United States<br />
-            <a href="tel:+19546396845">+1 (954) 639-6845</a>
-          </p>
-          <p>
-            Studio site:
-            <a href="https://axialmotion.com">axialmotion.com</a>
-          </p>
-        </article>
-      </div>
-
-      <h2>Product support</h2>
-      <ul>
-        <li>Olyve: <a href="https://getolyve.com/support">getolyve.com/support</a></li>
-        <li>Linkflow: <a href="https://linkflow.link">linkflow.link</a> or the email above</li>
-        <li>Today: <a href="https://today.andybotero.com">today.andybotero.com</a> or the email above</li>
-      </ul>
-
-      <h2>Policies</h2>
-      <p class="policy-links">
-        <a href="https://getolyve.com/billing">Olyve billing</a>
-        <a href="https://getolyve.com/refunds">Olyve refunds</a>
-        <a href="/billing">Company billing</a>
-        <a href="/terms">Terms</a>
-        <a href="/privacy">Privacy</a>
+        Customer support is at
+        <a href="/support">axialmotion.com/support</a>.
       </p>
     </main>
-    <footer class="site-footer">
-      <p>© <span id="year"></span> Axial Motion</p>
-      <div class="footer-links">
-        <a href="/billing">Billing</a>
-        <a href="/contact">Contact</a>
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
-        <a href="/refunds">Refunds</a>
-      </div>
-    </footer>
-    <script src="/site.js?v=20260922h"></script>
   </body>
 </html>
