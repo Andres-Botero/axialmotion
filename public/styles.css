@@ -152,6 +152,8 @@ nav {
   color: var(--muted);
   font-size: 14px;
   font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .site-nav a.is-current { color: var(--ink); }
