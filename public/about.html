@@ -4,41 +4,73 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>About — Axial Motion</title>
-    <meta name="description" content="Axial Motion is a product studio building software for operators, starting with Olyve." />
+    <meta name="description" content="Axial Motion builds tools and automation for company owners and operators — Olyve, Linkflow, and Today." />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css?v=20260922" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/components/drawer/drawer.js"></script>
+    <script>
+      (() => {
+        try {
+          const stored = localStorage.getItem("theme");
+          const theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
+    <div class="page-bg" aria-hidden="true"></div>
     <header class="site-header">
-      <a class="wordmark" href="/">Axial Motion</a>
-      <nav>
-        <a href="/about">About</a>
-        <a href="/#products">Products</a>
-        <a href="/contact">Contact</a>
-      </nav>
+      <div class="header-inner">
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-open>
+          <span class="hamburger" aria-hidden="true"><span></span></span>
+        </button>
+        <a class="wordmark" href="/" aria-label="Axial Motion home">Axial Motion</a>
+        <nav class="site-nav">
+          <a class="is-current" href="/about">About</a>
+          <a href="/#products">Products</a>
+          <a href="/#approach">Approach</a>
+          <a href="/contact">Contact</a>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme">Dark</button>
+        </nav>
+      </div>
     </header>
+    <sl-drawer class="nav-drawer" label="Menu" placement="start" no-header data-nav-drawer>
+      <nav class="drawer-nav">
+        <a class="is-current" href="/about">About</a>
+        <a href="/#products">Products</a>
+        <a href="/#approach">Approach</a>
+        <a href="/#notes">Notes</a>
+        <a href="/contact">Contact</a>
+        <a href="https://andybotero.com">Andy Botero</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme">Dark</button>
+      </nav>
+    </sl-drawer>
     <main class="prose">
       <p class="eyebrow">About</p>
-      <h1>A small studio for useful software.</h1>
+      <h1>A studio for useful software.</h1>
       <p>
-        Axial Motion builds products with a single job: make the operator’s day
-        shorter. We start from the visit, the invoice, and the inbox — not from
-        a stack of settings.
+        Axial Motion builds tools and automation for company owners and
+        operators. We start from the job — a visit, a referral, a day of work —
+        not from a stack of settings.
       </p>
       <p>
-        Our first product is <a href="https://getolyve.com">Olyve</a>, operations
-        software for service businesses. The studio also ships other tools,
-        including referral software at
-        <a href="https://linkflow.link">linkflow.link</a>.
+        The studio ships
+        <a href="https://getolyve.com">Olyve</a>,
+        <a href="https://linkflow.link">Linkflow</a>, and
+        <a href="https://today.andybotero.com">Today</a>.
       </p>
       <p>
         The company is led by
-        <a href="https://andybotero.com">Andy Botero</a>, an engineer who has
-        spent 18 years building products and leading teams at organizations
-        including Intuit, Microsoft, Adobe, and Nestlé.
+        <a href="https://andybotero.com">Andy Botero</a>.
       </p>
     </main>
     <footer class="site-footer">
@@ -49,6 +81,6 @@
         <a href="/contact">Contact</a>
       </div>
     </footer>
-    <script src="/site.js"></script>
+    <script src="/site.js?v=20260922"></script>
   </body>
 </html>

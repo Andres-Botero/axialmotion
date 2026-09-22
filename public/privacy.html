@@ -8,18 +8,52 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css?v=20260922" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/components/drawer/drawer.js"></script>
+    <script>
+      (() => {
+        try {
+          const stored = localStorage.getItem("theme");
+          const theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
+    <div class="page-bg" aria-hidden="true"></div>
     <header class="site-header">
-      <a class="wordmark" href="/">Axial Motion</a>
-      <nav>
+      <div class="header-inner">
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-open>
+          <span class="hamburger" aria-hidden="true"><span></span></span>
+        </button>
+        <a class="wordmark" href="/" aria-label="Axial Motion home">Axial Motion</a>
+        <nav class="site-nav">
+          <a href="/about">About</a>
+          <a href="/#products">Products</a>
+          <a href="/#approach">Approach</a>
+          <a href="/contact">Contact</a>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme">Dark</button>
+        </nav>
+      </div>
+    </header>
+    <sl-drawer class="nav-drawer" label="Menu" placement="start" no-header data-nav-drawer>
+      <nav class="drawer-nav">
         <a href="/about">About</a>
         <a href="/#products">Products</a>
+        <a href="/#approach">Approach</a>
+        <a href="/#notes">Notes</a>
         <a href="/contact">Contact</a>
+        <a href="https://andybotero.com">Andy Botero</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme">Dark</button>
       </nav>
-    </header>
+    </sl-drawer>
     <main class="prose">
       <p class="eyebrow">Legal</p>
       <h1>Website privacy notice</h1>
@@ -59,6 +93,6 @@
         <a href="https://getolyve.com/privacy">Olyve privacy</a>
       </div>
     </footer>
-    <script src="/site.js"></script>
+    <script src="/site.js?v=20260922"></script>
   </body>
 </html>
